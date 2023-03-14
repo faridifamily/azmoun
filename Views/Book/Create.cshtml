@@ -1,0 +1,22 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "ساخت کتاب";
+}
+
+
+<form method="post">
+    <div class="row">
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="@Model.Name" placeholder="Product name" required="required" />
+    </div>
+    <div class="row">
+        <label asp-for="Genre"></label>
+        <select type="text" asp-for="@Model.Genre" asp-items="Html.GetEnumSelectList<Genre>()" placeholder="Product Number" required="required"></select>
+    </div>
+    <div class="row">
+        <label asp-for="@Model.Serial"></label>
+        <input type="text" asp-for="Genre" placeholder="Product Price" required="required" />
+    </div>
+
+    <button type="submit" asp-controller="Book" asp-action="Create" class="btn btn-primary">ساخت کتاب</button>
+</form>
